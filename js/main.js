@@ -3,6 +3,9 @@ $(document).ready(function () {
     let floorPath = $('.home-image path');
     let counterUp = $('.counter-up');
     let counterDown = $('.counter-down');
+    let modal = $('.modal');
+    let modalCloseButton = $('.modal-close-button');
+    let buttonPrimary = $('.button-primary')
     console.log("Сайт готов к манипуляции")
     floorPath.on('mouseover', function(){
         floorPath.removeClass("current-floor");
@@ -10,6 +13,17 @@ $(document).ready(function () {
         $('.counter').text(currentFloor);
     });
 
+    floorPath.on('click',function(){
+        modal.toggleClass('is-open');
+    })
+
+    modalCloseButton.on('click',function(){
+        modal.toggleClass('is-open');
+    })
+
+    buttonPrimary.on('click',function(){
+        modal.toggleClass('is-open');
+    })
     counterUp.on('click', function () {
        if(currentFloor<18){
             currentFloor++;
